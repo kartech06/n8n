@@ -1,23 +1,9 @@
-# Use official PNPM image
-FROM node:22
+FROM n8nio/n8n:latest
 
-# Enable corepack and install pnpm
-RUN corepack enable && corepack prepare pnpm@10.12.1 --activate
-
-# Create app directory
-WORKDIR /app
-
-# Copy only the files needed for installation
-COPY . .
-
-# Install dependencies using pnpm
-RUN pnpm install
-
-# Build the project
-RUN pnpm build:n8n
-
-# Expose the port
 EXPOSE 5678
 
-# Run n8n
-CMD ["pnpm", "start"]
+# Optional: Set credentials via env vars instead
+# ENV N8N_BASIC_AUTH_USER=youruser
+# ENV N8N_BASIC_AUTH_PASSWORD=yourpass
+
+CMD ["n8n"]
