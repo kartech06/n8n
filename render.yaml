@@ -5,6 +5,6 @@ services:
     plan: free
     envVars:
       - key: N8N_BASIC_AUTH_USER
-        value: your-username
+        value: kartik
       - key: N8N_BASIC_AUTH_PASSWORD
-        value: your-password
+        value: StrongP@ss123
