@@ -1,2 +1,4 @@
-# Use official n8n image
-FROM n8nio/n8n:1.45.1
+FROM n8nio/n8n
+
+# Expose n8n on Render's expected port
+EXPOSE 10000
